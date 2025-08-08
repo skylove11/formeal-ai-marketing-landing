@@ -1,0 +1,376 @@
+/* Tailwind CSS Configuration & Custom Variables */
+:root {
+  --primary-dark: #1243A6;
+  --primary: #1D64F2;
+  --dark: #011C40;
+  --light: #F2EED8;
+  --accent: #F24822;
+}
+
+/* Custom Tailwind Configuration */
+.font-noto {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.bg-light {
+  background-color: var(--light);
+}
+
+.bg-dark {
+  background-color: var(--dark);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.text-dark {
+  color: var(--dark);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+/* Initially hidden for animations */
+.hidden-initially {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Hero Section Enhancements */
+.hero-title {
+  background: linear-gradient(135deg, var(--dark), var(--primary-dark));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* CTA Button Enhanced */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--accent), #e74c3c);
+  box-shadow: 0 8px 32px rgba(242, 72, 34, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  box-shadow: 0 12px 48px rgba(242, 72, 34, 0.5);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.cta-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover:before {
+  left: 100%;
+}
+
+/* Service Cards */
+.service-card {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Feature Cards */
+.feature-card {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Pricing Cards */
+.pricing-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+/* Process Steps */
+.process-step {
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+}
+
+.process-step .w-16 {
+  box-shadow: 0 8px 24px rgba(29, 100, 242, 0.3);
+  transition: all 0.3s ease;
+}
+
+.process-step:hover .w-16 {
+  box-shadow: 0 12px 32px rgba(29, 100, 242, 0.5);
+  transform: scale(1.1);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-left-color: var(--accent);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Titles */
+.section-title {
+  background: linear-gradient(135deg, var(--dark), var(--primary-dark));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Mobile Utilities */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  /* Mobile Typography Adjustments */
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  /* Mobile Spacing */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Mobile CTA Button */
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+  }
+  
+  /* Mobile Cards */
+  .service-card,
+  .feature-card,
+  .pricing-card,
+  .testimonial-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* Desktop Enhancements */
+@media (min-width: 1025px) {
+  /* Parallax-like effect for hero */
+  #hero {
+    background-attachment: fixed;
+  }
+  
+  /* Enhanced hover effects for desktop */
+  .service-card:hover,
+  .feature-card:hover,
+  .testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform-origin: left;
+  z-index: 1000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Focus States for Accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .cta-button,
+  .scroll-indicator {
+    display: none;
+  }
+  
+  * {
+    color: black !important;
+    background: white !important;
+  }
+}
